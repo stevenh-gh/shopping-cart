@@ -1,3 +1,5 @@
+import Card from "./Card";
+
 const Shop = () => {
     return (
         <>
@@ -9,6 +11,7 @@ const Shop = () => {
                 <a href="/">to homepage</a>
             </button>
             </nav>
+            <Card/>
         </>
     );
 };
