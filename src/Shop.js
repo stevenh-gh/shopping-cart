@@ -34,7 +34,7 @@ const Shop = () => {
                     <FontAwesomeIcon icon={faCartShopping} />
                 </div>
             </nav>
-            <Card/>
+            <Card item={itemList[0]} data={0} submit={handleSubmit} />
         </>
     );
 };
