@@ -43,7 +43,14 @@ const Shop = () => {
                     </div>
                 </div>
             </nav>
+            <div className="grid grid-cols-3 mt-5 gap-8">
             <Card item={itemList[0]} data={0} submit={handleSubmit} />
+                <Card item={itemList[1]} data={1} submit={handleSubmit} />
+                <Card item={itemList[2]} data={2} submit={handleSubmit} />
+                <Card item={itemList[2]} data={2} submit={handleSubmit} />
+                <Card item={itemList[2]} data={2} submit={handleSubmit} />
+                <Card item={itemList[2]} data={2} submit={handleSubmit} />
+            </div>
         </>
     );
 };
