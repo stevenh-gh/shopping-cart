@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import Card from "./Card";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
     const itemList = [
@@ -34,17 +35,17 @@ const Shop = () => {
             <nav className="flex justify-end space-x-10 pt-7">
                 <a href="/">home</a>
                 <a href="/shop">shop</a>
-                <div className="mr-2">
+                <Link to="/checkout" state={{ cart: cart }} href="/checkout">
                     {/* todo: add link to checkout */}
                     <FontAwesomeIcon icon={faCartShopping} />
                     {/* todo: if item quanitity is 1, then item else items */}
                     <div className="pl-2 inline-block">
                         ({itemsInCart()} items)
                     </div>
-                </div>
+                </Link>
             </nav>
             <div className="grid grid-cols-3 mt-5 gap-8">
-            <Card item={itemList[0]} data={0} submit={handleSubmit} />
+                <Card item={itemList[0]} data={0} submit={handleSubmit} />
                 <Card item={itemList[1]} data={1} submit={handleSubmit} />
                 <Card item={itemList[2]} data={2} submit={handleSubmit} />
                 <Card item={itemList[2]} data={2} submit={handleSubmit} />
