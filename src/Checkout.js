@@ -7,6 +7,13 @@ const Checkout = () => {
     return (
         <div>
             <div>in checkout</div>
+            <div className="border border-black">
+                <div className="grid grid-cols-3 font-bold">
+                    <div>title</div>
+                    <div>quantity</div>
+                    <div>total</div>
+                </div>
+            </div>
         </div>
     );
 };
