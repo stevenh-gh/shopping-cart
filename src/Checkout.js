@@ -13,6 +13,15 @@ const Checkout = () => {
                     <div>quantity</div>
                     <div>total</div>
                 </div>
+                {Object.values(cart).map((val, index) => {
+                    return (
+                        <div key={index} className="grid grid-cols-3">
+                            <div>{val.title}</div>
+                            <div>{val.quantity}</div>
+                            <div>{val.total}</div>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
