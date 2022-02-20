@@ -24,6 +24,15 @@ const Checkout = () => {
                     );
                 })}
             </div>
+            <div className="grid grid-cols-3">
+                <div className="font-bold col-start-2">grand total:</div>
+                <div className="col-start-3">
+                    {Object.values(cart).reduce(
+                        (acc, curr) => acc + curr.total,
+                        0
+                    )}
+                </div>
+            </div>
         </div>
     );
 };
