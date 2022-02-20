@@ -13,6 +13,7 @@ const Checkout = () => {
                     <div>quantity</div>
                     <div>total</div>
                 </div>
+                <hr className="h-3" />
                 {Object.values(cart).map((val, index) => {
                     return (
                         <div key={index} className="grid grid-cols-3">
