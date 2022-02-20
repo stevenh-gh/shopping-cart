@@ -23,6 +23,7 @@ const Shop = () => {
             itemList[Number(e.nativeEvent.path[2].attributes[0].value)]
         );
         item.quantity = Number(e.target[0].value);
+        item.total = item.quantity * item.price;
         setCart(cart.concat(item));
     };
 
