@@ -37,12 +37,16 @@ const Shop = () => {
                 <a href="/">home</a>
                 <a href="/shop">shop</a>
                 <Link to="/checkout" state={{ cart: cart }} href="/checkout">
-                    {/* todo: add link to checkout */}
                     <FontAwesomeIcon icon={faCartShopping} />
-                    {/* todo: if item quanitity is 1, then item else items */}
-                    <div className="pl-2 inline-block">
-                        ({itemsInCart()} items)
-                    </div>
+                    {(() => {
+                        const numItems = itemsInCart();
+                        const item = numItems === 1 ? "item" : "items";
+                        return (
+                            <div className="pl-2 inline-block">
+                                ({numItems} {item})
+                            </div>
+                        );
+                    })()}
                 </Link>
             </nav>
             <div className="grid grid-cols-3 mt-5 gap-8">
