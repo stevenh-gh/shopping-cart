@@ -26,7 +26,7 @@ const Checkout = () => {
                     );
                 })}
             </div>
-            <div className="grid grid-cols-4">
+            <div className="grid grid-cols-4 mt-5">
                 <div className="font-bold col-start-3">grand total:</div>
                 <div className="col-start-4">
                     {Object.values(cart)
