@@ -15,16 +15,16 @@ const Shop = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const dataIndex = Number(e.nativeEvent.path[2].attributes[0].value);
-        // const quantity = Number(e.target[0].value);
-        // todo: if quantity is 0, do nothing
-        const item = Object.assign(
-            {},
-            itemList[Number(e.nativeEvent.path[2].attributes[0].value)]
-        );
-        item.quantity = Number(e.target[0].value);
-        item.total = item.quantity * item.price;
-        setCart(cart.concat(item));
+        const quantity = Number(e.target[0].value);
+        if (quantity !== 0) {
+            const item = Object.assign(
+                {},
+                itemList[Number(e.nativeEvent.path[2].attributes[0].value)]
+            );
+            item.quantity = quantity;
+            item.total = item.quantity * item.price;
+            setCart(cart.concat(item));
+        }
     };
 
     const itemsInCart = () => {
