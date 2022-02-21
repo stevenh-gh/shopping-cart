@@ -5,7 +5,7 @@ const Card = (props) => {
             data-index={data}
             className="flex border border-black w-fit rounded-md hover:scale-105"
         >
-            <img src={item.picUrl} className="p-2" alt="" />
+            <img src={item.picUrl} className="p-2 object-contain w-60" alt="" />
             <div className="pl-2 pr-2 pt-2 space-y-3">
                 <div>{item.title}</div>
                 <form onSubmit={submit}>
