@@ -3,9 +3,8 @@ const Card = (props) => {
     return (
         <div
             data-index={data}
-            className="flex border border-black w-fit rounded-md"
+            className="flex border border-black w-fit rounded-md hover:scale-105"
         >
-            {/* todo: img src, name, description, etc will be replaced with props */}
             <img src={item.picUrl} className="p-2" alt="" />
             <div className="pl-2 pr-2 pt-2 space-y-3">
                 <div>{item.title}</div>
@@ -19,7 +18,6 @@ const Card = (props) => {
                         placeholder={0}
                     />
                     <br />
-                    {/* todo: style input button */}
                     <input
                         className="bg-gray-300 mt-3 w-full hover:cursor-pointer"
                         type="submit"
