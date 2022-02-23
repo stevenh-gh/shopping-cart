@@ -1,8 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import Card from "./Card";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Card from "./Card";
+import Cart from "./Cart";
 
 const Shop = () => {
     const itemList = [
@@ -63,18 +61,7 @@ const Shop = () => {
             <nav className="flex justify-end space-x-10 pt-7">
                 <a href="/">home</a>
                 <a href="/shop">shop</a>
-                <Link to="/checkout" state={{ cart: cart }}>
-                    <FontAwesomeIcon icon={faCartShopping} />
-                    {(() => {
-                        const numItems = itemsInCart();
-                        const item = numItems === 1 ? "item" : "items";
-                        return (
-                            <div className="pl-2 inline-block">
-                                ({numItems} {item})
-                            </div>
-                        );
-                    })()}
-                </Link>
+                <Cart cart={cart} itemsInCart={itemsInCart} />
             </nav>
             <div className="grid grid-cols-3 mt-5 gap-8">
                 <Card item={itemList[0]} data={0} submit={handleSubmit} />
