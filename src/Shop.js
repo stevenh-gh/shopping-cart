@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Card from "./Card";
-import Cart from "./Cart";
+import Nav from "./Nav";
 
 const Shop = () => {
     const itemList = [
@@ -58,11 +58,7 @@ const Shop = () => {
 
     return (
         <>
-            <nav className="flex justify-end space-x-10 pt-7">
-                <a href="/">home</a>
-                <a href="/shop">shop</a>
-                <Cart cart={cart} itemsInCart={itemsInCart} />
-            </nav>
+            <Nav cart={cart} itemsInCart={itemsInCart} />
             <div className="grid grid-cols-3 mt-5 gap-8">
                 <Card item={itemList[0]} data={0} submit={handleSubmit} />
                 <Card item={itemList[1]} data={1} submit={handleSubmit} />
