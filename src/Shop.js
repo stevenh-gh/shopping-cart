@@ -63,7 +63,7 @@ const Shop = () => {
             <nav className="flex justify-end space-x-10 pt-7">
                 <a href="/">home</a>
                 <a href="/shop">shop</a>
-                <Link to="/checkout" state={{ cart: cart }} href="/checkout">
+                <Link to="/checkout" state={{ cart: cart }}>
                     <FontAwesomeIcon icon={faCartShopping} />
                     {(() => {
                         const numItems = itemsInCart();
