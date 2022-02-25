@@ -1,13 +1,33 @@
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Cart = ({ cart, itemsInCart }) => {
+const Cart = () => {
+    // https://stackoverflow.com/a/61178371
+    useEffect(() => {
+        const checkCart = () => {
+            console.log("in check cart");
+            const json = JSON.parse(localStorage.getItem("cart"));
+            if (json === null) {
+                setNumItems(0);
+            } else {
+                const num = json.reduce(
+                    (acc, currentVal) => acc + currentVal.quantity,
+                    0
+                );
+                setNumItems(num);
+            }
+        };
+        window.addEventListener("storage", checkCart);
+        return () => {
+            window.removeEventListener("storage", checkCart);
+        };
+    }, []);
     return (
-        <Link to="/checkout" state={{ cart: cart }}>
+        <Link to="/checkout">
             <FontAwesomeIcon icon={faCartShopping} />
             {(() => {
-                const numItems = itemsInCart();
                 const item = numItems === 1 ? "item" : "items";
                 return (
                     <div className="pl-2 inline-block">
