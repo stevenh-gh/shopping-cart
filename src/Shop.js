@@ -36,7 +36,9 @@ const Shop = () => {
         },
     ];
 
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(
+        JSON.parse(localStorage.getItem("cart")) || []
+    );
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -60,7 +62,7 @@ const Shop = () => {
 
     return (
         <>
-            <Nav cart={cart} itemsInCart={itemsInCart} />
+            <Nav />
             <div className="grid grid-cols-3 mt-5 gap-8">
                 <Card item={itemList[0]} data={0} submit={handleSubmit} />
                 <Card item={itemList[1]} data={1} submit={handleSubmit} />
