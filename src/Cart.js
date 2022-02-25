@@ -4,6 +4,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
+    const [numItems, setNumItems] = useState(
+        localStorage.getItem("numItems") || 0
+    );
+
     // https://stackoverflow.com/a/61178371
     useEffect(() => {
         const checkCart = () => {
@@ -24,6 +28,11 @@ const Cart = () => {
             window.removeEventListener("storage", checkCart);
         };
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem("numItems", numItems);
+    });
+
     return (
         <Link to="/checkout">
             <FontAwesomeIcon icon={faCartShopping} />
