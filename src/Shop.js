@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 import Nav from "./Nav";
 
@@ -52,9 +52,11 @@ const Shop = () => {
         }
     };
 
-    const itemsInCart = () => {
-        return cart.reduce((acc, currentVal) => acc + currentVal.quantity, 0);
-    };
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+        // https://stackoverflow.com/a/65348883
+        window.dispatchEvent(new Event("storage"));
+    }, [cart]);
 
     return (
         <>
