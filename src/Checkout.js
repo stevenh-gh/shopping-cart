@@ -1,11 +1,9 @@
-import { useLocation } from "react-router-dom";
+import Nav from "./Nav";
 
 const Checkout = () => {
-    const location = useLocation();
-    const { cart } = location.state;
-    console.log(cart);
     return (
         <div>
+            <Nav />
             <div>in checkout</div>
             <div className="border border-black">
                 <div className="grid grid-cols-4 font-bold">
@@ -15,21 +13,23 @@ const Checkout = () => {
                     <div>total</div>
                 </div>
                 <hr className="h-3" />
-                {Object.values(cart).map((val, index) => {
-                    return (
-                        <div key={index} className="grid grid-cols-4">
-                            <div>{val.title}</div>
-                            <div>{val.price}</div>
-                            <div>{val.quantity}</div>
-                            <div>{val.total.toFixed(2)}</div>
-                        </div>
-                    );
-                })}
+                {Object.values(JSON.parse(localStorage.getItem("cart"))).map(
+                    (val, index) => {
+                        return (
+                            <div key={index} className="grid grid-cols-4">
+                                <div>{val.title}</div>
+                                <div>{val.price}</div>
+                                <div>{val.quantity}</div>
+                                <div>{val.total.toFixed(2)}</div>
+                            </div>
+                        );
+                    }
+                )}
             </div>
             <div className="grid grid-cols-4 mt-5">
                 <div className="font-bold col-start-3">grand total:</div>
                 <div className="col-start-4">
-                    {Object.values(cart)
+                    {Object.values(JSON.parse(localStorage.getItem("cart")))
                         .reduce((acc, curr) => acc + curr.total, 0)
                         .toFixed(2)}
                 </div>
