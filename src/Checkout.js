@@ -1,3 +1,5 @@
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Nav from "./Nav";
 
 const Checkout = () => {
@@ -17,7 +19,13 @@ const Checkout = () => {
                     (val, index) => {
                         return (
                             <div key={index} className="grid grid-cols-4">
-                                <div>{val.title}</div>
+                                <div className="group">
+                                    {val.title}
+                                    <FontAwesomeIcon
+                                        icon={faXmark}
+                                        className="ml-4 text-red-600 invisible group-hover:visible hover:cursor-pointer"
+                                    />
+                                </div>
                                 <div>{val.price}</div>
                                 <div>{val.quantity}</div>
                                 <div>{val.total.toFixed(2)}</div>
