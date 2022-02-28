@@ -12,13 +12,26 @@ const App = () => {
                     Welcome to Keyboards Town!
                 </h1>
                 <Link
-                    className="bg-blue-400 p-4 text-white rounded-md hover:bg-blue-300 row-start-2 col-span-5 col-start-4 text-center mt-2"
+                    className="bg-blue-400 p-4 text-white rounded-md hover:bg-blue-300 row-start-2 col-span-5 col-start-4 text-center mt-2 mb-5"
                     to="/shop"
                 >
                     Click here to begin shopping!
                     <FontAwesomeIcon icon={faCartShopping} className="ml-3" />
                 </Link>
             </div>
+            <figure>
+                <img src={require("./bg.jpg")} className="h-96" alt="" />
+                <figcaption className="text-sm">
+                    Photo by{" "}
+                    <a href="https://unsplash.com/@nuclear?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                        Bernin Uben
+                    </a>{" "}
+                    on{" "}
+                    <a href="https://unsplash.com/s/photos/keyboards?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                        Unsplash
+                    </a>
+                </figcaption>
+            </figure>
         </>
     );
 };
