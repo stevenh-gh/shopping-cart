@@ -13,7 +13,7 @@ const App = () => {
                 </h1>
                 <Link
                     className="bg-blue-400 p-4 text-white rounded-md hover:bg-blue-300 row-start-2 col-span-5 col-start-4 text-center mt-2 mb-5"
-                    to="/shop"
+                    to="/shopping-cart/shop"
                 >
                     Click here to begin shopping!
                     <FontAwesomeIcon icon={faCartShopping} className="ml-3" />

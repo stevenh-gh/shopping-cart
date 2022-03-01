@@ -34,7 +34,7 @@ const Cart = () => {
     });
 
     return (
-        <Link to="/checkout">
+        <Link to="/shopping-cart/checkout">
             <FontAwesomeIcon icon={faCartShopping} />
             {(() => {
                 const item = numItems === 1 ? "item" : "items";
